@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Build
+        shell: bash
+        run: go build -trimpath -ldflags "-s -w" -o flurrbit.exe ./cmd/flurrbit
+      - name: Package
+        shell: bash
+        run: |
+          folder="flurrbit-${{ github.ref_name }}-windows-amd64"
+          mkdir "$folder"
+          cp flurrbit.exe README.md LICENSE "$folder"/
+          7z a "$folder.zip" "$folder" > /dev/null
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: flurrbit-*.zip
