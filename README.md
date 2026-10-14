@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="docs/logo.png" alt="旋宝" width="140" />
-
 # 麦旋宝 Flurrbit
 
 **一杯住在你桌面上的像素麦旋风**
@@ -47,7 +45,7 @@
 .\flurrbit.exe
 ```
 
-Token 会保存在环境变量里，以后直接双击 `flurrbit.exe` 就能用。
+Token 会保存在环境变量里。
 
 ## 和旋宝互动
 
@@ -104,8 +102,6 @@ Token 会保存在环境变量里，以后直接双击 `flurrbit.exe` 就能用�
 | 👑 至尊麦旋风 | 24,000 | 冰淇淋堆得最高，杯口和波浪换成金色，头顶戴着皇冠 |
 
 ## 命令
-
-程序没放进 PATH 的话，在它所在的文件夹里把 `flurrbit` 写成 `.\flurrbit.exe`。
 
 | 命令 | 作用 |
 |---|---|
